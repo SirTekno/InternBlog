@@ -7,7 +7,6 @@ from blog.slug import unique_slugify
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length = 255)
-    author = models.ForeignKey(User)
     date = models.DateTimeField(auto_now_add=True)
     text = PlaceholderField("blog_text")
     image = FilerImageField(blank=True, null=True)

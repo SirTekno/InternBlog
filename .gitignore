@@ -2,3 +2,6 @@ env/
 data/
 test.py
 templates/
+*.pyc
+hook.go
+deploy.sh
