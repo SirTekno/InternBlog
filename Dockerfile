@@ -24,13 +24,12 @@ RUN pip install uwsgi
 
 RUN mkdir /django && mkdir /django/data && mkdir /django/app
 
+ADD app/requirements.txt /django/app
+RUN pip install -r /django/app/requirements.txt
+
 ADD conf/* /django/
 ADD app/ /django/app
 ADD deployment/settings.py /django/app/newswangers
-
-
-
-RUN pip install -r /django/app/requirements.txt
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm /etc/nginx/sites-enabled/default
