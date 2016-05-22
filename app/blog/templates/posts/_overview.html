@@ -1,0 +1,30 @@
+{% extends CMS_TEMPLATE %}
+
+{% load cms_tags sekizai_tags staticfiles thumbnail %}
+
+{% block content %}
+  {% for post in posts %}
+  {% if post.published or authenticated %}
+    <div class="row post-row {% if not post.published %}unpublished{% endif %}" >
+
+      <div class="col-sm-2 date fixed-height-cell">
+        <h4> {{ post.date|date:"M d, Y" }} </h4>
+      </div>
+
+      <div class="col-sm-10 post_title fixed-height-cell">
+        <a href="{% url "blog:post" post.slug %}" ><h3>{% render_model post "title" %}</h3></a>
+      </div>
+    </div>
+    <div class="row post-row fixed-height-cell">
+      <div class="col-sm-2 post-image">
+        <img src="{% thumbnail post.image 150x150 crop %}" class="avatar"/>
+      </div>
+
+      <div class="col-sm-10 snippet">
+        {{ post.snippet }}
+      </div>
+    </div>
+  </br>
+  {% endif %}
+  {% endfor %}
+{% endblock content %}
