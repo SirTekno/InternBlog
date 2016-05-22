@@ -23,5 +23,6 @@ def post(request, slug):
 
     return render(request, "posts/_individual_post.html", {"post": post})
 
+# Todo
 def rss(request):
     pass
