@@ -5,3 +5,4 @@ templates/
 *.pyc
 hook.go
 deploy.sh
+hook
