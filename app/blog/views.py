@@ -8,7 +8,7 @@ def index(request, page = 0):
     next_page = False
     prev_page = False
 
-    posts = Post.objects.order_by('date')[page * results_per_page: (page+1 * results_per_page) + 1]
+    posts = Post.objects.order_by('-date')[page * results_per_page: (page+1 * results_per_page) + 1]
     if results_per_page == 13:
         next_page = True
     if page > 0:
