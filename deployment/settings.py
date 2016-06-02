@@ -28,7 +28,7 @@ with open(os.path.join(DATA_DIR, 'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'intern.newswangers.com', 'newswangers.com', 'www.newswangers.com']
 
