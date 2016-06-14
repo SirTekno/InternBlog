@@ -152,7 +152,8 @@ INSTALLED_APPS = [
     'blog',
     'easy_thumbnails',
     'filer',
-    'mptt'
+    'mptt',
+    'code_snippet'
 ]
 
 LANGUAGES = (
