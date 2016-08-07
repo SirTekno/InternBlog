@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo yes | python /django/app/manage.py collectstatic
+python /django/app/manage.py makemigrations
+python /django/app/manage.py migrate
+
 # Generates a new secret key for the app
 key=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)
 echo $key > app/secret_key.txt
