@@ -1,4 +1,4 @@
-# This Docker project is based off of the fantastic work of Jackie Lan. The base project can be found here: https://github.com/JackieLan/djangocms-container
+# This container is based off of the fantastic work of Jackie Lan which can be found here: https://github.com/JackieLan/djangocms-container
 
 FROM ubuntu
 
